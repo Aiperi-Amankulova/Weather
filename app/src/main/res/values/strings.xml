@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="_9_41">9:41</string>
+    <string name="_29">29</string>
+    <string name="api">d0042867490638534fd33e2ccbde2014</string>
+    <string name="may_2019">May 2019</string>
+    <string name="california_us">California, US</string>
+    <string name="now">Now</string>
+    <string name="today">Today</string>
+    <string name="_21">21°</string>
+    <string name="little_cloud">Little Cloud</string>
+    <string name="_28">28°</string>
+    <string name="max">Max</string>
+    <string name="_18">18°</string>
+    <string name="min">Min</string>
+    <string name="this_week">This week</string>
+    <string name="wind">Wind</string>
+    <string name="pressure">Pressure</string>
+    <string name="sw_4m_s">SW_4m_s</string>
+    <string name="_1010mb">1010mb</string>
+    <string name="humidity">Humidity</string>
+    <string name="cloudiness">Cloudiness</string>
+    <string name="_81">81%</string>
+    <string name="_100">100%</string>
+    <string name="_30">30</string>
+    <string name="_28_n17">28\n17</string>
+    <string name="may_n2019">May\n2019</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="_06_00">06:00</string>
+    <string name="sunset">Sunset</string>
+    <string name="_20_31">20:31</string>
+    <string name="vi">Обновить</string>
+    <string name="_17">17</string>
+</resources>
