@@ -16,7 +16,7 @@ interface WeatherService {
     ) : Call<CurrentWeather>
 
     @GET("data/2.5/weather")
-    fun getWeatherbycoordianates(
+    fun getWeathers(
         @Query("lat") lat: String,
         @Query("lon") lon: String,
         @Query("appid") appid: String,
@@ -24,7 +24,7 @@ interface WeatherService {
     ) : Call<CurrentWeather>
 
 
-    @GET("data/2.5/forecast")    // на 5 дней
+    @GET("data/2.5/forecast")
     fun forecast(
         @Query("q") city: String,
         @Query("appid") appid: String,
@@ -32,8 +32,8 @@ interface WeatherService {
     ) : Call<Forecast>
 
 
-    @GET("data/2.5/onecall")    // на 7 дней
-    fun onecall(
+    @GET("data/2.5/onecall")
+    fun сall(
         @Query("lat") lat: String,
         @Query("lon") lon: String,
         @Query("exclude") exclude : String,
