@@ -8,86 +8,73 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 object TypeConverter {
-
+    
+    
     //Object
     @JvmStatic
     @TypeConverter
-    fun CoordtoString(model: CoordModel): String {
+    fun coordToString(model: CoordModel): String {
         return Gson().toJson(model)
     }
-
+    
     @JvmStatic
     @TypeConverter
-    fun coordtoObject(text: String): CoordModel? {
+    fun coordToObject(text: String): CoordModel? {
         if (TextUtils.isEmpty(text))
             return null
         return Gson().fromJson(text, CoordModel::class.java)
     }
-
-
+    //
     @JvmStatic
     @TypeConverter
-    fun citytoString(model: CityModel): String {
+    fun cityToString(model: CityModel): String {
         return Gson().toJson(model)
     }
-
+    
     @JvmStatic
     @TypeConverter
-    fun citytoObject(text: String): CityModel? {
+    fun cityToObject(text: String): CityModel? {
         if (TextUtils.isEmpty(text))
             return null
         return Gson().fromJson(text, CityModel::class.java)
     }
-
+    
     @JvmStatic
     @TypeConverter
-    fun ForcastModelOnetoString(model: Forecast): String {
+    fun forecastMainToString(model: Forecast): String {
         return Gson().toJson(model)
     }
-
+    
     @JvmStatic
     @TypeConverter
-    fun ForcastModelOnetoObject(text: String): Forecast? {
+    fun forecastMainObject(text: String): Forecast? {
         if (TextUtils.isEmpty(text))
             return null
         return Gson().fromJson(text, Forecast::class.java)
-    }
-    @JvmStatic
+    }@JvmStatic
+    
     @TypeConverter
-    fun ForCastDailyFourthtoString(model: ForecastModel): String {
+    fun forecastMainToString(model: FortempModel): String {
         return Gson().toJson(model)
     }
-
+    
     @JvmStatic
     @TypeConverter
-    fun ForCastDailyFourthtoObject(text: String): ForecastModel? {
-        if (TextUtils.isEmpty(text))
-            return null
-        return Gson().fromJson(text, ForecastModel::class.java)
-    }
-
-    @JvmStatic
-    @TypeConverter
-    fun ForTempFifthtoString(model: FortempModel): String {
-        return Gson().toJson(model)
-    }
-
-    @JvmStatic
-    @TypeConverter
-    fun ForTempFifthtoObject(text: String): FortempModel? {
+    fun forecastMainToObject(text: String): FortempModel? {
         if (TextUtils.isEmpty(text))
             return null
         return Gson().fromJson(text, FortempModel::class.java)
     }
+    
     @JvmStatic
     @TypeConverter
-    fun listForCastDailyFourthToString(model: List<ForecastModel>): String {
+    fun listForecastItemToString(model: List<ForecastModel>): String {
         return Gson().toJson(model)
     }
-
+    
     @JvmStatic
     @TypeConverter
-    fun listForCastDailyFourthToObject(text: String?): List<ForecastModel>? {
+    fun listForecastItemToObject(text: String?): List<ForecastModel>? {
         if (text == null) return mutableListOf()
         val typeToken = object : TypeToken<List<ForecastModel>>() {}.type
         return Gson().fromJson(text, typeToken)
@@ -98,7 +85,7 @@ object TypeConverter {
     fun weatherToString(model: List<Weather>): String {
         return Gson().toJson(model)
     }
-
+    
     @JvmStatic
     @TypeConverter
     fun weatherToObject(text: String?): List<Weather>? {

@@ -20,17 +20,17 @@ object RetrofitBuilder {
             Retrofit.Builder()
                 .baseUrl("http://api.openweathermap.org/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(buildOkHttp()) //(2)
+                .client(buildOkHttp())
                 .build()
                 .create(WeatherService:: class.java)
         return service
     }
 
-    private fun buildOkHttp(): OkHttpClient {  // функц позволяет прокидывать time out (2)
+    private fun buildOkHttp(): OkHttpClient {
         val okhttp = OkHttpClient.Builder()
-            .connectTimeout(5,TimeUnit.SECONDS)  // первый time  работает на соедин серв //лимит на connect 5sec
-            .readTimeout(30,TimeUnit.SECONDS)  // полученн данных, в течен 30 сек не придут данные выйдет ошибка
-            .writeTimeout(30,TimeUnit.SECONDS) //отправка данных
+            .connectTimeout(5,TimeUnit.SECONDS)
+            .readTimeout(30,TimeUnit.SECONDS)
+            .writeTimeout(30,TimeUnit.SECONDS)
             .build()
         return okhttp
     }

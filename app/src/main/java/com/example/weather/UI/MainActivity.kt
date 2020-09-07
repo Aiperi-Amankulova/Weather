@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun LoadByLocation(location: Location) {
-        RetrofitBuilder.getService()?.getWeatherbycoordianates(
+        RetrofitBuilder.getService()?.getWeathers(
             location.latitude.toString(), location.longitude.toString(),
             getString(R.string.api), "metric"
         )?.enqueue(object : Callback<CurrentWeather> {
@@ -89,20 +89,16 @@ class MainActivity : AppCompatActivity() {
                 call: Call<CurrentWeather>,
                 response: Response<CurrentWeather>
             ) {
-
+                
                 val city = response.body()?.name
                 val temp = getString(R.string._18, response.body()?.main?.temp?.toInt().toString())
                 val feels = response.body()?.main?.feels_like
-                val min =
-                    getString(R.string._18, response.body()?.main?.temp_min?.toInt().toString())
-                val max =
-                    getString(R.string._18, response.body()?.main?.temp_max?.toInt().toString())
-                val pressure =
-                    getString(R.string._1010mb, response.body()?.main?.pressure.toString())
+                val min = getString(R.string._18, response.body()?.main?.temp_min?.toInt().toString())
+                val max = getString(R.string._18, response.body()?.main?.temp_max?.toInt().toString())
+                val pressure = getString(R.string._1010mb, response.body()?.main?.pressure.toString())
                 val humidity = getString(R.string._81, response.body()?.main?.humidity)
                 val cloud = getString(R.string._81, response.body()?.clouds?.all)
-                val wind =
-                    getString(R.string.sw_4m_s, response.body()?.wind?.speed?.toInt().toString())
+                val wind = getString(R.string.sw_4m_s, response.body()?.wind?.speed?.toInt().toString())
                 val sunrise = formatDate(response.body()?.sys?.sunrise)
                 val sunset = formatDate(response.body()?.sys?.sunset)
                 val image = response.body()?.weather?.first()?.icon
@@ -147,7 +143,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun LoadByLocationSecond(location: Location) {
-        RetrofitBuilder.getService()?.onecall(
+        RetrofitBuilder.getService()?.сall(
             location.latitude.toString(),
             location.longitude.toString(),
             "hourly,current,minutely",

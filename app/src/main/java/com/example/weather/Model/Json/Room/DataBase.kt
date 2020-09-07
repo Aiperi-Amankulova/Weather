@@ -12,5 +12,4 @@ import com.example.weather.Model.Json.Forecast.*
 @TypeConverters(value = [TypeConverter::class])
 abstract class DataBase : RoomDatabase() {
     abstract fun getDao(): Dao
-
 }

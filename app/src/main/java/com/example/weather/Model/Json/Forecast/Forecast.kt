@@ -11,6 +11,5 @@ data class Forecast(
     val cod: String,
     val message: Int,
     val cnt: Int,
-    val city: CityModel,
     val daily: List<ForecastModel>
 )

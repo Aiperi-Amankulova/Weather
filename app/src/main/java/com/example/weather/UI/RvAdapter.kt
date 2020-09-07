@@ -9,12 +9,12 @@ import com.example.weather.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_recycler.view.*
 
-class RvAdapter : RecyclerView.Adapter<RvAdapter.RvVholder>() {
+class RvAdapter : RecyclerView.Adapter<RvAdapter.RvHolder>() {
     private val list = arrayListOf<ForecastModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RvVholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RvHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycler,  parent,false)
-        return RvVholder(view)
+        return RvHolder(view)
     }
 
     fun update(list: List<ForecastModel>?) {
@@ -25,13 +25,13 @@ class RvAdapter : RecyclerView.Adapter<RvAdapter.RvVholder>() {
         }
     }
 
-    override fun onBindViewHolder(holder: RvVholder, position: Int) {
+    override fun onBindViewHolder(holder: RvHolder, position: Int) {
         holder.bind(list[position])
     }
 
     override fun getItemCount() = list.size
 
-    class RvVholder(v : View) : RecyclerView.ViewHolder(v){
+    class RvHolder(v : View) : RecyclerView.ViewHolder(v){
         fun bind(data: ForecastModel) {
             itemView.tv.text =  data.temp.day.toInt().toString()
             itemView.Rt.text=data.temp.max.toInt().toString()

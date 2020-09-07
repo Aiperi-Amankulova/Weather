@@ -16,11 +16,11 @@ object PermissionUtils {
     )
 
     fun checkLocationPermission(activity: AppCompatActivity): Boolean {
-        if (isCheckedPermission(activity))
-            return true
+        return if (isCheckedPermission(activity))
+            true
         else {
             ActivityCompat.requestPermissions(activity, permission, LOCATION_REQUEST_CODE)
-            return false
+            false
         }
     }
 
